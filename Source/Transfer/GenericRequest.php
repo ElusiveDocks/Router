@@ -18,11 +18,13 @@ class GenericRequest extends AbstractRequest implements RequestInterface
      */
     public function capture(): RequestInterface
     {
+        $this->setServiceProviderAdapter(Request::createFromGlobals());
+
         Dispatcher::dispatchEvent(
-            RequestEvent::CAPTURE
+            RequestEvent::CAPTURE,
+            Dispatcher::createEvent($this)
         );
 
-        $this->setServiceProviderAdapter(Request::createFromGlobals());
         return $this;
     }
 
