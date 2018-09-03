@@ -2,7 +2,9 @@
 
 namespace ElusiveDocks\Router\Source\Transfer;
 
+use ElusiveDocks\Dispatcher\Source\Dispatcher;
 use ElusiveDocks\Router\Contract\ResponseInterface;
+use ElusiveDocks\Router\Event\RouterEvent;
 use ElusiveDocks\Router\Exception\GenericException;
 
 /**
@@ -19,6 +21,11 @@ class GenericResponse extends AbstractResponse implements ResponseInterface
      */
     public function send(): ResponseInterface
     {
+        Dispatcher::dispatchEvent(
+            RouterEvent::SEND,
+            Dispatcher::createEvent($this)
+        );
+
         $this->sendHeaders();
         $this->sendContent();
         return $this;
@@ -30,6 +37,11 @@ class GenericResponse extends AbstractResponse implements ResponseInterface
      */
     private function sendHeaders(): ResponseInterface
     {
+        Dispatcher::dispatchEvent(
+            RouterEvent::SEND_HEADER,
+            Dispatcher::createEvent($this)
+        );
+
         if ($this->isHeaderAvailable()) {
             // TODO: Implement sendHeaders() method.
             $this->sendStatus(404);
@@ -68,6 +80,11 @@ class GenericResponse extends AbstractResponse implements ResponseInterface
 
     private function sendContent()
     {
+        Dispatcher::dispatchEvent(
+            RouterEvent::SEND_CONTENT,
+            Dispatcher::createEvent($this)
+        );
+
         // TODO: Implement sendContent() method.
         var_dump(__METHOD__);
     }
