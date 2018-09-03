@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ElusiveDocks/Dispatcher.git",
-                "reference": "f47548a9d510b5a91c8ae0e4b867c23441bcb902"
+                "reference": "df83c83e5935642bb840374b3d43d8c7b8314f93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ElusiveDocks/Dispatcher/zipball/f47548a9d510b5a91c8ae0e4b867c23441bcb902",
-                "reference": "f47548a9d510b5a91c8ae0e4b867c23441bcb902",
+                "url": "https://api.github.com/repos/ElusiveDocks/Dispatcher/zipball/df83c83e5935642bb840374b3d43d8c7b8314f93",
+                "reference": "df83c83e5935642bb840374b3d43d8c7b8314f93",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "source": "https://github.com/ElusiveDocks/Dispatcher/tree/experiment",
                 "issues": "https://github.com/ElusiveDocks/Dispatcher/issues"
             },
-            "time": "2018-09-03T16:33:57+00:00"
+            "time": "2018-09-03T16:44:40+00:00"
         },
         {
             "name": "symfony/http-foundation",
